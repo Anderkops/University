@@ -1,0 +1,35 @@
+inherited formLocalizaFornecedor: TformLocalizaFornecedor
+  Caption = 'Localiza'#231#227'o de Fornecedor'
+  ClientWidth = 315
+  OldCreateOrder = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited lblMensagem: TLabel
+    Width = 137
+    Caption = 'Digite o nome do fornecedor:'
+  end
+  inherited edtValorPesquisa: TEdit
+    Width = 281
+    CharCase = ecNormal
+    MaxLength = 40
+    OnKeyUp = edtValorPesquisaKeyUp
+  end
+  inherited grdDados: TDBGrid
+    Width = 281
+    DataSource = dmBaseDados.dsFornecedores
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'NOME_FORN'
+        Title.Alignment = taCenter
+        Title.Caption = 'Nome do fornecedor'
+        Visible = True
+      end>
+  end
+  inherited btnOK: TBitBtn
+    Left = 136
+  end
+  inherited btnCancela: TBitBtn
+    Left = 224
+  end
+end

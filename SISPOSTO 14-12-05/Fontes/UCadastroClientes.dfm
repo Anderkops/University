@@ -1,0 +1,269 @@
+inherited formCadastroClientes: TformCadastroClientes
+  Left = 191
+  Top = 136
+  Caption = 'Cadastro de clientes'
+  ClientHeight = 284
+  ClientWidth = 442
+  OldCreateOrder = True
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lblCodFuncfk: TLabel [0]
+    Left = 16
+    Top = 56
+    Width = 82
+    Height = 13
+    Caption = 'C'#243'digo do cliente'
+  end
+  object lblNomeCli: TLabel [1]
+    Left = 144
+    Top = 56
+    Width = 77
+    Height = 13
+    Caption = 'Nome do cliente'
+  end
+  object lblLogradCli: TLabel [2]
+    Left = 16
+    Top = 96
+    Width = 54
+    Height = 13
+    Caption = 'Logradouro'
+  end
+  object lblNumCli: TLabel [3]
+    Left = 232
+    Top = 96
+    Width = 37
+    Height = 13
+    Caption = 'N'#250'mero'
+  end
+  object lblComplCli: TLabel [4]
+    Left = 312
+    Top = 96
+    Width = 64
+    Height = 13
+    Caption = 'Complemento'
+  end
+  object lblBairroCli: TLabel [5]
+    Left = 16
+    Top = 136
+    Width = 27
+    Height = 13
+    Caption = 'Bairro'
+  end
+  object lblCidCli: TLabel [6]
+    Left = 192
+    Top = 136
+    Width = 33
+    Height = 13
+    Caption = 'Cidade'
+  end
+  object lblEstadoCli: TLabel [7]
+    Left = 368
+    Top = 136
+    Width = 33
+    Height = 13
+    Caption = 'Estado'
+  end
+  object lblCepCli: TLabel [8]
+    Left = 16
+    Top = 176
+    Width = 19
+    Height = 13
+    Caption = 'Cep'
+  end
+  object lblTelcomCli: TLabel [9]
+    Left = 152
+    Top = 176
+    Width = 90
+    Height = 13
+    Caption = 'Telefone comercial'
+  end
+  object lblTelresCli: TLabel [10]
+    Left = 296
+    Top = 176
+    Width = 95
+    Height = 13
+    Caption = 'Telefone residencial'
+  end
+  object lblRefCli: TLabel [11]
+    Left = 16
+    Top = 216
+    Width = 52
+    Height = 13
+    Caption = 'Refer'#234'ncia'
+  end
+  inherited pnlBotoes: TPanel
+    Width = 442
+    inherited btnPrimeiro: TSpeedButton
+      OnClick = btnPrimeiroClick
+    end
+    inherited btnAnterior: TSpeedButton
+      OnClick = btnAnteriorClick
+    end
+    inherited btnProximo: TSpeedButton
+      OnClick = btnProximoClick
+    end
+    inherited btnUltimo: TSpeedButton
+      OnClick = btnUltimoClick
+    end
+    inherited btnNovo: TSpeedButton
+      OnClick = btnNovoClick
+    end
+    inherited btnLocalizar: TSpeedButton
+      OnClick = btnLocalizarClick
+    end
+    inherited btnExcluir: TSpeedButton
+      OnClick = btnExcluirClick
+    end
+  end
+  object fldCodCli: TDBEdit
+    Left = 16
+    Top = 72
+    Width = 121
+    Height = 21
+    AutoSize = False
+    DataField = 'COD_CLI'
+    DataSource = dmBaseDados.dsClientes
+    Enabled = False
+    TabOrder = 1
+  end
+  object fldNomeCli: TDBEdit
+    Left = 144
+    Top = 72
+    Width = 281
+    Height = 21
+    AutoSize = False
+    DataField = 'NOME_CLI'
+    DataSource = dmBaseDados.dsClientes
+    TabOrder = 2
+  end
+  object fldLogradCli: TDBEdit
+    Left = 16
+    Top = 112
+    Width = 209
+    Height = 21
+    AutoSize = False
+    DataField = 'LOGRAD_CLI'
+    DataSource = dmBaseDados.dsClientes
+    TabOrder = 3
+  end
+  object fldNumCli: TDBEdit
+    Left = 232
+    Top = 112
+    Width = 73
+    Height = 21
+    AutoSize = False
+    DataField = 'NUM_CLI'
+    DataSource = dmBaseDados.dsClientes
+    TabOrder = 4
+  end
+  object fldComplCli: TDBEdit
+    Left = 312
+    Top = 112
+    Width = 113
+    Height = 21
+    AutoSize = False
+    DataField = 'COMPL_CLI'
+    DataSource = dmBaseDados.dsClientes
+    TabOrder = 5
+  end
+  object fldBairroCli: TDBEdit
+    Left = 16
+    Top = 152
+    Width = 169
+    Height = 21
+    AutoSize = False
+    DataField = 'BAIRRO_CLI'
+    DataSource = dmBaseDados.dsClientes
+    TabOrder = 6
+  end
+  object fldCidCli: TDBEdit
+    Left = 192
+    Top = 152
+    Width = 169
+    Height = 21
+    AutoSize = False
+    DataField = 'CID_CLI'
+    DataSource = dmBaseDados.dsClientes
+    TabOrder = 7
+  end
+  object fldEstadoCli: TDBComboBox
+    Left = 368
+    Top = 152
+    Width = 57
+    Height = 21
+    DataField = 'ESTADO_CLI'
+    DataSource = dmBaseDados.dsClientes
+    ItemHeight = 13
+    Items.Strings = (
+      'AC'
+      'AL'
+      'AM'
+      'AP'
+      'BA'
+      'CE'
+      'DF'
+      'ES'
+      'GO'
+      'MA'
+      'MG'
+      'MS'
+      'MT'
+      'PA'
+      'PB'
+      'PE'
+      'PI'
+      'PR'
+      'RJ'
+      'RN'
+      'RO'
+      'RR'
+      'RS'
+      'SC'
+      'SE'
+      'SP'
+      'TO')
+    TabOrder = 8
+  end
+  object fldCepCli: TDBEdit
+    Left = 16
+    Top = 192
+    Width = 121
+    Height = 21
+    AutoSize = False
+    DataField = 'CEP_CLI'
+    DataSource = dmBaseDados.dsClientes
+    MaxLength = 9
+    TabOrder = 9
+  end
+  object fldTelcomCli: TDBEdit
+    Left = 152
+    Top = 192
+    Width = 129
+    Height = 21
+    AutoSize = False
+    DataField = 'TELCOM_CLI'
+    DataSource = dmBaseDados.dsClientes
+    TabOrder = 10
+  end
+  object fldTelresCli: TDBEdit
+    Left = 296
+    Top = 192
+    Width = 129
+    Height = 21
+    AutoSize = False
+    DataField = 'TELRES_CLI'
+    DataSource = dmBaseDados.dsClientes
+    TabOrder = 11
+  end
+  object fldRefCli: TDBMemo
+    Left = 16
+    Top = 232
+    Width = 409
+    Height = 41
+    DataField = 'REF_CLI'
+    DataSource = dmBaseDados.dsClientes
+    TabOrder = 12
+  end
+end

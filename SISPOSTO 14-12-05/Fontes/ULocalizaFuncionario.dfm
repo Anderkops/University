@@ -1,0 +1,37 @@
+inherited formLocalizaFuncionario: TformLocalizaFuncionario
+  Left = 414
+  Top = 126
+  Caption = 'Localiza'#231#227'o de funcion'#225'rios'
+  ClientWidth = 305
+  OldCreateOrder = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited lblMensagem: TLabel
+    Width = 138
+    Caption = 'Digite o nome do funcion'#225'rio:'
+  end
+  inherited edtValorPesquisa: TEdit
+    Width = 273
+    CharCase = ecNormal
+    MaxLength = 40
+    OnKeyUp = edtValorPesquisaKeyUp
+  end
+  inherited grdDados: TDBGrid
+    Width = 273
+    DataSource = dmBaseDados.dsFuncionarios
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'NOME_FUNC'
+        Title.Alignment = taCenter
+        Title.Caption = 'Nome do funcion'#225'rio'
+        Visible = True
+      end>
+  end
+  inherited btnOK: TBitBtn
+    Left = 128
+  end
+  inherited btnCancela: TBitBtn
+    Left = 216
+  end
+end

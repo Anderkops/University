@@ -1,0 +1,14 @@
+inherited formRelCombustivel: TformRelCombustivel
+  Left = 199
+  Top = 11
+  Caption = 'Relat'#243'rio completo dos combust'#237'veis'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Label1: TLabel
+    Width = 166
+    Caption = 'Relat'#243'rio dos combust'#237'veis:'
+  end
+  inherited DBGrid1: TDBGrid
+    DataSource = dmBaseDados.dsCombustiveis
+  end
+end

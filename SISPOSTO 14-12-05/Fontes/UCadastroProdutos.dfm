@@ -1,0 +1,224 @@
+inherited formCadastroProdutos: TformCadastroProdutos
+  Left = 213
+  Top = 186
+  Caption = 'Cadastro de  produtos'
+  ClientHeight = 228
+  ClientWidth = 450
+  OldCreateOrder = True
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lblCodProd: TLabel [0]
+    Left = 16
+    Top = 56
+    Width = 87
+    Height = 13
+    Caption = 'C'#243'digo do produto'
+  end
+  object lblNomeProd: TLabel [1]
+    Left = 144
+    Top = 56
+    Width = 82
+    Height = 13
+    Caption = 'Nome do produto'
+  end
+  object lblMarcaProd: TLabel [2]
+    Left = 16
+    Top = 96
+    Width = 84
+    Height = 13
+    Caption = 'Marca do produto'
+  end
+  object lblFornProd: TLabel [3]
+    Left = 16
+    Top = 136
+    Width = 54
+    Height = 13
+    Caption = 'Fornecedor'
+  end
+  object lblMedidaProd: TLabel [4]
+    Left = 160
+    Top = 136
+    Width = 35
+    Height = 13
+    Caption = 'Medida'
+  end
+  object lblUnidmedProd: TLabel [5]
+    Left = 248
+    Top = 136
+    Width = 92
+    Height = 13
+    Caption = 'Unidade de medida'
+  end
+  object lblTipoProd: TLabel [6]
+    Left = 360
+    Top = 136
+    Width = 75
+    Height = 13
+    Caption = 'Tipo de produto'
+  end
+  object lblPrecoProd: TLabel [7]
+    Left = 16
+    Top = 176
+    Width = 28
+    Height = 13
+    Caption = 'Pre'#231'o'
+  end
+  object lblEstoqueProd: TLabel [8]
+    Left = 160
+    Top = 176
+    Width = 39
+    Height = 13
+    Caption = 'Estoque'
+  end
+  object lblDatacadProd: TLabel [9]
+    Left = 304
+    Top = 176
+    Width = 82
+    Height = 13
+    Caption = 'Data do cadastro'
+  end
+  inherited pnlBotoes: TPanel
+    Width = 450
+    inherited btnPrimeiro: TSpeedButton
+      OnClick = btnPrimeiroClick
+    end
+    inherited btnAnterior: TSpeedButton
+      OnClick = btnAnteriorClick
+    end
+    inherited btnProximo: TSpeedButton
+      OnClick = btnProximoClick
+    end
+    inherited btnUltimo: TSpeedButton
+      OnClick = btnUltimoClick
+    end
+    inherited btnNovo: TSpeedButton
+      OnClick = btnNovoClick
+    end
+    inherited btnLocalizar: TSpeedButton
+      OnClick = btnLocalizarClick
+    end
+    inherited btnExcluir: TSpeedButton
+      OnClick = btnExcluirClick
+    end
+  end
+  object fldCodProd: TDBEdit
+    Left = 16
+    Top = 72
+    Width = 121
+    Height = 21
+    AutoSize = False
+    DataField = 'COD_PROD'
+    DataSource = dmBaseDados.dsProdutos
+    TabOrder = 1
+  end
+  object fldNomeProd: TDBEdit
+    Left = 144
+    Top = 72
+    Width = 289
+    Height = 21
+    AutoSize = False
+    DataField = 'NOME_PROD'
+    DataSource = dmBaseDados.dsProdutos
+    TabOrder = 2
+  end
+  object fldMarcaProd: TDBEdit
+    Left = 16
+    Top = 112
+    Width = 417
+    Height = 21
+    AutoSize = False
+    DataField = 'MARCA_PROD'
+    DataSource = dmBaseDados.dsProdutos
+    TabOrder = 3
+  end
+  object fldMedidaProd: TDBEdit
+    Left = 160
+    Top = 152
+    Width = 73
+    Height = 21
+    AutoSize = False
+    DataField = 'MEDIDA_PROD'
+    DataSource = dmBaseDados.dsProdutos
+    TabOrder = 5
+  end
+  object fldPrecoProd: TDBEdit
+    Left = 16
+    Top = 192
+    Width = 129
+    Height = 21
+    AutoSize = False
+    DataField = 'PRECO_PROD'
+    DataSource = dmBaseDados.dsProdutos
+    TabOrder = 8
+  end
+  object fldEstoqueProd: TDBEdit
+    Left = 160
+    Top = 192
+    Width = 129
+    Height = 21
+    AutoSize = False
+    DataField = 'ESTOQUE_PROD'
+    DataSource = dmBaseDados.dsProdutos
+    TabOrder = 9
+  end
+  object fldDatacadProd: TDBEdit
+    Left = 304
+    Top = 192
+    Width = 129
+    Height = 21
+    AutoSize = False
+    DataField = 'DATACAD_PROD'
+    DataSource = dmBaseDados.dsProdutos
+    MaxLength = 10
+    TabOrder = 10
+  end
+  object fldTipoProd: TDBComboBox
+    Left = 360
+    Top = 152
+    Width = 73
+    Height = 21
+    DataField = 'TIPO_PROD'
+    DataSource = dmBaseDados.dsProdutos
+    ItemHeight = 13
+    Items.Strings = (
+      'C'
+      'P'
+      'S')
+    TabOrder = 7
+  end
+  object fldUnidmedProd: TDBComboBox
+    Left = 248
+    Top = 152
+    Width = 97
+    Height = 21
+    DataField = 'UNIDMED_PROD'
+    DataSource = dmBaseDados.dsProdutos
+    ItemHeight = 13
+    Items.Strings = (
+      'sem medida'
+      'litro'
+      'mililitro'
+      'kilograma'
+      'grama')
+    TabOrder = 6
+  end
+  object fldCodForn: TDBLookupComboBox
+    Left = 16
+    Top = 152
+    Width = 129
+    Height = 21
+    Ctl3D = True
+    DataField = 'COD_FORN_FK'
+    DataSource = dmBaseDados.dsProdutos
+    DropDownWidth = 200
+    KeyField = 'COD_FORN'
+    ListField = 'NOME_FORN'
+    ListSource = dmBaseDados.dsFornecedores
+    ParentCtl3D = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 4
+  end
+end

@@ -1,0 +1,10 @@
+inherited formRelCombustivel1: TformRelCombustivel1
+  Left = 208
+  Top = 108
+  Caption = 'formRelCombustivel1'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited DBGrid1: TDBGrid
+    DataSource = dmBaseDados.dsSoProd
+  end
+end

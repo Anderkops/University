@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="&quot;F:\SISPOSTO 14-12-05\SisPosto.exe&quot;"/>
+    <OBJFILES value="Objetos\SisPosto.obj Objetos\UPrincipal.obj Objetos\UCadastroMestre.obj 
+      Objetos\UCadastroConvenios.obj Objetos\UModuloDados.obj 
+      Objetos\ULocalizaMestre.obj Objetos\ULocalizaConvenio.obj 
+      Objetos\UCadastroClientes.obj Objetos\ULocalizaCliente.obj 
+      Objetos\UCadastroProdutos.obj Objetos\UCadastroFuncionarios.obj 
+      Objetos\ULocalizaFuncionario.obj Objetos\UCadastroFornecedores.obj 
+      Objetos\ULocalizaFornecedor.obj Objetos\ULocalizaProduto.obj 
+      Objetos\UCadastroTanques.obj Objetos\UCadastroBombas.obj 
+      Objetos\UCadastroBicos.obj Objetos\UCalendario.obj 
+      Objetos\UBackupRestore.obj Objetos\USobre.obj Objetos\USplash.obj 
+      Objetos\UVendas.obj Objetos\UCadastroConvCli.obj 
+      Objetos\UCriacaoUsuario.obj Objetos\URelVendaData.obj 
+      Objetos\URelEstoque.obj Objetos\URelVendaFunc.obj 
+      Objetos\URelVendaProd.obj Objetos\URelCliente.obj Objetos\URelConvenio.obj 
+      Objetos\URelFornecedor.obj Objetos\URelFuncionario.obj 
+      Objetos\URelCombustivel.obj Objetos\URelProduto.obj Objetos\URelServico.obj"/>
+    <RESFILES value="SisPosto.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Fontes\UPrincipal.dfm Fontes\UCadastroMestre.dfm 
+      Fontes\UCadastroConvenios.dfm Fontes\UModuloDados.dfm 
+      Fontes\ULocalizaMestre.dfm Fontes\ULocalizaConvenio.dfm 
+      Fontes\UCadastroClientes.dfm Fontes\ULocalizaCliente.dfm 
+      Fontes\UCadastroProdutos.dfm Fontes\UCadastroFuncionarios.dfm 
+      Fontes\ULocalizaFuncionario.dfm Fontes\UCadastroFornecedores.dfm 
+      Fontes\ULocalizaFornecedor.dfm Fontes\ULocalizaProduto.dfm 
+      Fontes\UCadastroTanques.dfm Fontes\UCadastroBombas.dfm 
+      Fontes\UCadastroBicos.dfm Fontes\UCalendario.dfm Fontes\UBackupRestore.dfm 
+      Fontes\USobre.dfm Fontes\USplash.dfm Fontes\UVendas.dfm 
+      Fontes\UCadastroConvCli.dfm Fontes\UCriacaoUsuario.dfm 
+      Fontes\URelVendaData.dfm Fontes\URelEstoque.dfm Fontes\URelVendaFunc.dfm 
+      Fontes\URelVendaProd.dfm Fontes\URelCliente.dfm Fontes\URelConvenio.dfm 
+      Fontes\URelFornecedor.dfm Fontes\URelFuncionario.dfm 
+      Fontes\URelCombustivel.dfm Fontes\URelProduto.dfm Fontes\URelServico.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="bcbsmp.lib vclx.lib vcldb.lib dbexpress.lib dsnap.lib cds.lib ibxpress.lib 
+      dbrtl.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib ibxpress.lib cds.lib dsnap.lib dbexpress.lib 
+      vcldb.lib vclx.lib bcbsmp.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes;Fontes"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="SisPosto.cpp"/>
+    <INCLUDEPATH value="Fontes;&quot;C:\Arquivos de programas\Borland\CBuilder6\Projects&quot;;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="Fontes;&quot;C:\Arquivos de programas\Borland\CBuilder6\Projects&quot;;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-IFontes -I&quot;C:\Arquivos de programas\Borland\CBuilder6\Projects&quot; 
+      -I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-N2&quot;F:\SISPOSTO 14-12-05\Objetos&quot; -N0&quot;F:\SISPOSTO 14-12-05\Objetos&quot; -$YD 
+      -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-I&quot;F:\SISPOSTO 14-12-05\Objetos&quot; -D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="SisPosto.res" FORMNAME="" UNITNAME="SisPosto.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SisPosto.cpp" FORMNAME="" UNITNAME="SisPosto" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UPrincipal.cpp" FORMNAME="formPrincipal" UNITNAME="UPrincipal" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroMestre.cpp" FORMNAME="formCadastroMestre" UNITNAME="UCadastroMestre" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroConvenios.cpp" FORMNAME="formCadastroConvenios" UNITNAME="UCadastroConvenios" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UModuloDados.cpp" FORMNAME="dmBaseDados" UNITNAME="UModuloDados" CONTAINERID="CCompiler" DESIGNCLASS="TDataModule" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\ULocalizaMestre.cpp" FORMNAME="formLocalizaMestre" UNITNAME="ULocalizaMestre" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\ULocalizaConvenio.cpp" FORMNAME="formLocalizaConvenio" UNITNAME="ULocalizaConvenio" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroClientes.cpp" FORMNAME="formCadastroClientes" UNITNAME="UCadastroClientes" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\ULocalizaCliente.cpp" FORMNAME="formLocalizaCliente" UNITNAME="ULocalizaCliente" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroProdutos.cpp" FORMNAME="formCadastroProdutos" UNITNAME="UCadastroProdutos" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroFuncionarios.cpp" FORMNAME="formCadastroFuncionarios" UNITNAME="UCadastroFuncionarios" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\ULocalizaFuncionario.cpp" FORMNAME="formLocalizaFuncionario" UNITNAME="ULocalizaFuncionario" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroFornecedores.cpp" FORMNAME="formCadastroFornecedores" UNITNAME="UCadastroFornecedores" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\ULocalizaFornecedor.cpp" FORMNAME="formLocalizaFornecedor" UNITNAME="ULocalizaFornecedor" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\ULocalizaProduto.cpp" FORMNAME="formLocalizaProduto" UNITNAME="ULocalizaProduto" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroTanques.cpp" FORMNAME="formCadastroTanques" UNITNAME="UCadastroTanques" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroBombas.cpp" FORMNAME="formCadastroBombas" UNITNAME="UCadastroBombas" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroBicos.cpp" FORMNAME="formCadastroBicos" UNITNAME="UCadastroBicos" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCalendario.cpp" FORMNAME="formCalendario" UNITNAME="UCalendario" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UBackupRestore.cpp" FORMNAME="formBackupRestore" UNITNAME="UBackupRestore" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\USobre.cpp" FORMNAME="formSobre" UNITNAME="USobre" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\USplash.cpp" FORMNAME="formSplash" UNITNAME="USplash" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UVendas.cpp" FORMNAME="formVenda" UNITNAME="UVendas" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCadastroConvCli.cpp" FORMNAME="formConvCli" UNITNAME="UCadastroConvCli" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\UCriacaoUsuario.cpp" FORMNAME="formCriacaoUsuario" UNITNAME="UCriacaoUsuario" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelVendaData.cpp" FORMNAME="formRelVendaData" UNITNAME="URelVendaData" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelEstoque.cpp" FORMNAME="formRelEstoque" UNITNAME="URelEstoque" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelVendaFunc.cpp" FORMNAME="formRelVendaFunc" UNITNAME="URelVendaFunc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelVendaProd.cpp" FORMNAME="formRelVendaProd" UNITNAME="URelVendaProd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelCliente.cpp" FORMNAME="formRelCliente" UNITNAME="URelCliente" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelConvenio.cpp" FORMNAME="formRelConvenio" UNITNAME="URelConvenio" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelFornecedor.cpp" FORMNAME="formRelFornecedor" UNITNAME="URelFornecedor" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelFuncionario.cpp" FORMNAME="formRelFuncionario" UNITNAME="URelFuncionario" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelCombustivel.cpp" FORMNAME="formRelCombustivel" UNITNAME="URelCombustivel" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelProduto.cpp" FORMNAME="formRelProduto" UNITNAME="URelProduto" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fontes\URelServico.cpp" FORMNAME="formRelServico" UNITNAME="URelServico" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1046
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+c:\arquivos de programas\borland\cbuilder6\Bin\dclclxdb60.bpl=Borland CLX Database Components
+c:\arquivos de programas\borland\cbuilder6\Bin\dclite60.bpl=Borland Integrated Translation Environment
+
+[HistoryLists\hlIncludePath]
+Count=3
+Item0=Fontes;C:\Arquivos de programas\Borland\CBuilder6\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item1=Fontes;C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\SISPOSTO\Fontes;$(BCB)\include;$(BCB)\include\vcl
+Item2=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=3
+Item0=Fontes;C:\Arquivos de programas\Borland\CBuilder6\Projects;$(BCB)\lib\obj;$(BCB)\lib
+Item1=Fontes;C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\SISPOSTO\Fontes;$(BCB)\lib\obj;$(BCB)\lib
+Item2=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=F:\SISPOSTO 14-12-05\Objetos
+Item1=d:\SISPOSTO\Objetos
+
+[HistoryLists\hlFinalOutputDir]
+Count=4
+Item0=F:\SISPOSTO 14-12-05\
+Item1=F:\SISPOSTO 14-12-05
+Item2=d:\SISPOSTO\
+Item3=d:\SISPOSTO
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+  </IDEOPTIONS>
+</PROJECT>

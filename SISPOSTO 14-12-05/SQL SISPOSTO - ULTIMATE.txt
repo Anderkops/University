@@ -1,0 +1,223 @@
+create domain string40 as varchar(40);
+create domain string7 as varchar(7);
+create domain string15 as varchar(15);
+create domain string20 as varchar(20);
+create domain string200 as varchar(200);
+create domain string10 as varchar(10);
+create domain state as varchar(2) check (value in ('AC','AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA','PB','PE','PI','PR','RJ','RN','RO','RR','RS','SC','SE','SP','TO'));
+create domain zipcode as varchar(9);
+create domain money as numeric(12,2);
+create domain percentual as numeric(4,4);
+create domain kind as varchar(1) check (value in ('C','P','S'));
+create domain measure as numeric(12,2) check (value >= 0);
+create domain amount as integer check (value >= 0);
+create domain situation varchar(5) check (value in ('PAGO','HAVER'));
+
+create table clientes(
+cod_cli integer not null primary key,
+nome_cli string40 not null,
+lograd_cli string40,
+num_cli string7,
+compl_cli string15,
+bairro_cli string20,
+cid_cli string20,
+estado_cli state,
+cep_cli zipcode,
+telcom_cli string15,
+telres_cli string15,
+ref_cli string200
+)
+
+create table funcionarios(
+cod_func integer not null primary key,
+nome_func string40 not null,
+lograd_func string40 not null,
+num_func string7 not null,
+compl_func string15,
+bairro_func string20 not null,
+cid_func string20 not null,
+estado_func state not null,
+cep_func zipcode,
+telres_func string15,
+cel_func string15,
+pis_func string20 not null,
+cpf_func string20 not null,
+rg_func string20 not null,
+cargo_func string20 not null,
+carttrab_func string20 not null,
+dataentr_func date not null,
+datasaida_func date,
+salario_func money not null,
+banco_func string20 not null,
+agencia_func string10 not null,
+conta_func string15 not null,
+ref_func string200
+)
+
+create table convenios(
+cod_conv integer not null primary key,
+nome_conv string40 not null,
+descvista_conv percentual not null,
+descprazo_conv percentual not null,
+comissao_conv percentual not null
+)
+
+????!!!
+create table convcli(
+cod_cli_fk integer not null references clientes(cod_cli),
+cod_conv_fk integer not null references convenios(cod_conv),
+primary key(cod_cli_fk, cod_conv_fk)
+)
+
+create table convcli(
+cod_convcli integer not null primary key,
+cod_cli_fk integer not null references clientes(cod_cli),
+cod_conv_fk integer not null references convenios(cod_conv)
+)
+
+create table fornecedores(
+cod_forn integer not null primary key,
+nome_forn string40 not null,
+nomecont_forn string40,
+lograd_forn string40,
+num_forn string7,
+compl_forn string15,
+bairro_forn string20,
+cid_forn string20,
+estado_forn state,
+cep_forn zipcode,
+telcom_forn string15 not null,
+fax_forn string15,
+cgc_forn string15,
+ie_forn string15,
+ref_forn string200
+)
+
+create table produtos(
+cod_prod integer not null primary key,
+nome_prod string40 not null,
+marca_prod string20,
+medida_prod measure,
+unidmed_prod varchar (15) not null,
+cod_forn_fk integer references fornecedores(cod_forn),
+tipo_prod kind not null,
+preco_prod money not null,
+estoque_prod amount default 0,
+datacad_prod date default 'Today'
+)
+
+create table vendas(
+cod_vend integer not null primary key,
+cod_cli_fk integer not null references clientes(cod_cli),
+cod_func_fk integer not null references funcionarios(cod_func),
+cod_conv_fk integer references convenios(cod_conv),
+subtotal_vend money,
+desconto_vend money,
+total_vend money,
+data_vend date default 'Today',
+hora_vend time default 'Now',
+situacao_vend situation not null,
+datapag_vend date
+)
+
+create table itemvenda(
+cod_vend_fk2 integer not null references vendas(cod_vend),
+cod_prod_fk2 integer not null references produtos(cod_prod),
+qtde_item amount default 1,
+valorunit_item money,
+subtotal_item money,
+primary key(cod_vend_fk2, cod_prod_fk2)
+)
+
+create table tanques(
+cod_tan integer not null primary key,
+cod_prod_fk integer not null references produtos(cod_prod),
+abertura_tan string20 not null,
+fechamento_tan string20 not null,
+datareg_tan date not null
+)
+
+create table bombas(
+cod_bom integer not null primary key,
+cod_tan_fk integer not null references tanques(cod_tan),
+leitura_bom measure not null,
+dataleit_bom date not null,
+horaleit_bom time not null
+)
+
+create table bicos(
+cod_bic integer not null primary key,
+cod_bom_fk integer not null references bombas(cod_bom)
+)
+
+;***************************************************************
+
+create view contas(codcli_cont, nomecli_cont, vend_cont, data_cont, total_cont) as
+select cod_cli_fk, nome_cli, cod_vend, data_vend, total_vend
+from vendas inner join clientes
+on vendas.cod_cli_fk = clientes.cod_cli
+where situacao_vend = 'HAVER';
+
+create view venda_data (data_vd, valor_vd) as
+select data_vend, sum(total_vend)
+from vendas
+group by data_vend;
+
+create view venda_hoje(valor_vh) as
+select sum(total_vend)
+from vendas
+where data_vend = 'Today';
+
+create view estoque(prod_est, nome_est, marca_est, medida_est, unidmed_est, qtde_est, valor_est) as
+select cod_prod, nome_prod, marca_prod, medida_prod, unidmed_prod, estoque_prod, estoque_prod * preco_prod
+from produtos
+where tipo_prod='P' or tipo_prod='C';
+
+?
+create view venda_func(codfunc_vf, nomefunc_vf, data_vf, valor_vf) as
+select cod_func_fk, nome_func, data_vend, sum(total_vend) as valor_vf
+from vendas inner join funcionarios
+on vendas.cod_func_fk = funcionarios.cod_func
+group by data_vend, cod_func_fk, nome_func;
+
+create view servicos(cod_serv, nome_serv, preco_serv, datacad_serv) as
+select cod_prod, nome_prod, preco_prod, datacad_prod
+from produtos
+where tipo_prod = 'S';
+
+create view combustiveis(cod_comb, nome_comb, marca_comb, codforn_comb, preco_comb, estoque_comb) as
+select cod_prod, nome_prod, marca_prod, cod_forn_fk, preco_prod, estoque_prod
+from produtos
+where tipo_prod = 'C';
+
+create view soprodutos(cod_soprod, nome_soprod, marca_soprod, medida_soprod, unidmed_soprod, codforn_soprod, preco_soprod, estoque_soprod, datacad_soprod) as
+select cod_prod, nome_prod, marca_prod, medida_prod, unidmed_prod, cod_forn_fk, preco_prod, estoque_prod, datacad_prod
+from produtos
+where tipo_prod = 'P';
+
+?
+create view qtde_vendida_prod(codprod_vp, nomeprod_vp, valor_vp) as
+select cod_prod_fk2, nome_prod, sum(qtde_item) as soma
+from itemvenda inner join produtos
+on itemvenda.cod_prod_fk2 = produtos.cod_prod
+group by cod_prod_fk2, nome_prod;
+
+;-------------------------------------------------------
+
+set term#;
+create trigger ins_item for itemvenda
+active after insert position 0 as
+begin
+update produtos set estoque_prod = estoque_prod - new.qtde_item
+where cod_prod = new.cod_prod_fk2;
+end #
+set term;#
+
+set term #;
+create trigger total_valor for itemvenda
+active after insert position 1 as
+begin
+update vendas set subtotal_vend = subtotal_vend + new.subtotal_item
+where cod_vend = new.cod_vend_fk2;
+end #
+set term; #

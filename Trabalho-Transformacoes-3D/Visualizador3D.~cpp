@@ -1,0 +1,22 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+USERES("Visualizador3D.res");
+USEFORM("UTela.cpp", formTela);
+//---------------------------------------------------------------------------
+WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
+{
+        try
+        {
+                 Application->Initialize();
+                 Application->CreateForm(__classid(TformTela), &formTela);
+         Application->Run();
+        }
+        catch (Exception &exception)
+        {
+                 Application->ShowException(&exception);
+        }
+        return 0;
+}
+//---------------------------------------------------------------------------
